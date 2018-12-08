@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="100" id="Qrk-Y4-3An" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="110" id="Qrk-Y4-3An" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qrk-Y4-3An" id="7H3-eA-edy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zPq-9B-Fmk">
@@ -71,7 +71,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="zPq-9B-Fmk" secondAttribute="trailing" id="AKQ-og-Bjs"/>
-                                        <constraint firstAttribute="bottom" secondItem="zPq-9B-Fmk" secondAttribute="bottom" id="aET-dM-dDN"/>
+                                        <constraint firstAttribute="bottom" secondItem="zPq-9B-Fmk" secondAttribute="bottom" constant="10" id="Qrx-CN-z4F"/>
                                         <constraint firstItem="zPq-9B-Fmk" firstAttribute="top" secondItem="7H3-eA-edy" secondAttribute="top" id="sHD-RH-fc1"/>
                                         <constraint firstItem="zPq-9B-Fmk" firstAttribute="leading" secondItem="7H3-eA-edy" secondAttribute="leading" constant="8" id="t7m-k7-D4A"/>
                                     </constraints>
