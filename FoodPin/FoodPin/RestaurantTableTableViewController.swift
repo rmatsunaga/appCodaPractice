@@ -54,8 +54,8 @@ class RestaurantTableTableViewController: UITableViewController {
         cell.typeLabel?.text = restaurantTypes[indexPath.row]
         cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
         
-        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark: .none
-        
+       // cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark: .none
+        cell.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row] ? false : true
         return cell
     }
     
@@ -88,17 +88,20 @@ class RestaurantTableTableViewController: UITableViewController {
         let callAction = UIAlertAction(title: "Call 123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
         optionMenu.addAction(callAction)
         
-        // Add Check in action
-        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
+        // Add Check in action and Undo Check In
+        let checkInTitle = restaurantIsVisited[indexPath.row] ? "Undo Check in" : "Check In"
+        let checkInAction = UIAlertAction(title: checkInTitle, style: .default, handler: {
             
             (action: UIAlertAction!) -> Void in
             
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
-            self.restaurantIsVisited[indexPath.row] = true
+            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+            cell.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row] ? true : false
+          //  cell.accessoryType = self.restaurantIsVisited[indexPath.row] ? .none : .checkmark
+            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
             
         })
         optionMenu.addAction(checkInAction)
+        
         
         // present menu
         present(optionMenu, animated: true, completion: nil)
