@@ -64,6 +64,14 @@ class RestaurantTableTableViewController: UITableViewController {
         // Initialize option menu as action sheet
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
         
+        // add popoverPresentationController to make iPad friendly
+        if let popoverController = optionMenu.popoverPresentationController{
+            if let cell = tableView.cellForRow(at: indexPath) {
+                popoverController.sourceView = cell
+                popoverController.sourceRect = cell.bounds
+            }
+        }
+        
         // Add actions to menu
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
